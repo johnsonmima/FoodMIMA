@@ -12,9 +12,8 @@ class FMLottieAnimatedView: UIView {
     private var animationView: LottieAnimationView;
     
     
-    required init(withLottieFile fileName:String ) {
-        
-        animationView = .init(name: "loading");
+    required init(withLottieFile fileName:String, withAnimationSpeed speed:Double = 0.5 ) {
+        animationView = .init(name: fileName);
        
         // super
         super.init(frame: .zero)
@@ -22,9 +21,9 @@ class FMLottieAnimatedView: UIView {
         animationView.frame = self.bounds
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .loop
-        animationView.animationSpeed = 0.5
+        animationView.animationSpeed = speed
         animationView.play()
-        backgroundColor = .blue
+    
        
         self.setUpAnimatedView()
         

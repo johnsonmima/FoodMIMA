@@ -18,6 +18,7 @@
 		943798B929A3F03400B1268B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 943798B829A3F03400B1268B /* Lottie */; };
 		943798BD29A3F06600B1268B /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 943798BB29A3F06600B1268B /* loading.json */; };
 		943798BE29A3F06600B1268B /* splash-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 943798BC29A3F06600B1268B /* splash-loading.json */; };
+		943798C029A4240600B1268B /* FMSizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943798BF29A4240600B1268B /* FMSizeManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		943798B529A3EC8B00B1268B /* FMLottieAnimatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMLottieAnimatedView.swift; sourceTree = "<group>"; };
 		943798BB29A3F06600B1268B /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		943798BC29A3F06600B1268B /* splash-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "splash-loading.json"; sourceTree = "<group>"; };
+		943798BF29A4240600B1268B /* FMSizeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMSizeManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +79,6 @@
 				9437989E29A3B40400B1268B /* Assets.xcassets */,
 				9437989B29A3B40300B1268B /* Main.storyboard */,
 				943798A029A3B40400B1268B /* LaunchScreen.storyboard */,
-				943798BB29A3F06600B1268B /* loading.json */,
 				943798A329A3B40400B1268B /* Info.plist */,
 			);
 			path = FoodMIMA;
@@ -141,6 +142,7 @@
 		943798B229A3DBFB00B1268B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				943798BF29A4240600B1268B /* FMSizeManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				943798BC29A3F06600B1268B /* splash-loading.json */,
+				943798BB29A3F06600B1268B /* loading.json */,
 			);
 			path = LottieFiles;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				943798B629A3EC8B00B1268B /* FMLottieAnimatedView.swift in Sources */,
 				9437989629A3B40300B1268B /* AppDelegate.swift in Sources */,
 				9437989829A3B40300B1268B /* SceneDelegate.swift in Sources */,
+				943798C029A4240600B1268B /* FMSizeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
