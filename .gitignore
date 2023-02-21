@@ -2,6 +2,9 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
+## Firebase Config Here
+/FoodMIMA/GoogleService-Info.plist
+
 ## User settings
 xcuserdata/
 
