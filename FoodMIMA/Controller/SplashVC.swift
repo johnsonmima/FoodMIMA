@@ -1,11 +1,12 @@
 //
 //  SplashVC.swift
 //  FoodMIMA
-//
+//  Splash View Controller
 //  Created by Johnson Olusegun on 2/20/23.
 //
 
 import UIKit
+
 
 class SplashVC: UIViewController {
     
@@ -36,13 +37,22 @@ class SplashVC: UIViewController {
         let isSignedIn = false;
         
         
-        if (isSignedIn){
-            // navigate to user home
-        }else{
-            // navigate to signin screen
+        // dalay for 3 seconds before navigating
+        Timer.scheduledTimer(withTimeInterval: Double(K.General.SplashDelayTime), repeats: false) { _ in
+            
+            if (isSignedIn){
+                // navigate to user home
+            }else{
+                // triger the AuthRootController
+                self.loadAuthRootController()
+            }
         }
         
     }
+    
+    
+    
+    
     
     //MARK: - Setup Splash Indicator
     private func setupLoadingIndicator(){
@@ -61,6 +71,14 @@ class SplashVC: UIViewController {
     //MARK: - AuthRootController
     /// - Description: This method send the user to the welcome screen and then to signin and signup screen
     func loadAuthRootController(){
+        let layout = UICollectionViewFlowLayout();
+        layout.scrollDirection = .horizontal;
+        let onboardingCollectionVC = OnboardingCollectionVC(collectionViewLayout: layout);
+        let onBoardingRootController = UINavigationController(rootViewController: onboardingCollectionVC);
+        
+        
+        onBoardingRootController.modalPresentationStyle = .fullScreen
+        self.present(onBoardingRootController, animated: true);
         
     }
     
@@ -70,3 +88,4 @@ class SplashVC: UIViewController {
     
     
 }
+
