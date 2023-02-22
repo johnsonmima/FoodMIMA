@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Lunch time-bro.png",
+      "filename" : "Deconstructed food-bro.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,12 +12,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Lunch time-bro-2.png",
+      "filename" : "OnBFoodImage4.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Lunch time-bro@2x.png",
+      "filename" : "Deconstructed food-bro@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -28,12 +28,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Lunch time-bro-2@2x.png",
+      "filename" : "OnBFoodImage4@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Lunch time-bro@3x.png",
+      "filename" : "Deconstructed food-bro@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -44,7 +44,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Lunch time-bro-2@3x.png",
+      "filename" : "OnBFoodImage4@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

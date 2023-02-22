@@ -1,12 +1,12 @@
 //
 //  FMSizeManager.swift
 //  FoodMIMA
-//  for setting horizontal, vertical, moderate scale and font size
 //  Created by Johnson Olusegun on 2/20/23.
 //
 
 import Foundation
 
+/// - Description:for setting horizontal, vertical, moderate scale and font size
 struct FMSizeManager {
     
     private let GUILD_LINE_BASE_WIDTH = 375.0;
