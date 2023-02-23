@@ -65,9 +65,6 @@ class OnboardingCollectionVC: UICollectionViewController {
         // hide scroll bar
         collectionView.showsHorizontalScrollIndicator = false;
         
-        
-        view.backgroundColor = .green
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -85,10 +82,13 @@ class OnboardingCollectionVC: UICollectionViewController {
         navigationController?.navigationBar.isHidden = true;
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         navigationController?.navigationBar.isHidden = false;
-     
+        // remove the title text
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+      
+        
     }
     
     //MARK: - Setup Buttom Controller Layout

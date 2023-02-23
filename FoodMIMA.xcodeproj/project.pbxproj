@@ -15,6 +15,11 @@
 		942A4B1E29A47F51002101A5 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B1D29A47F51002101A5 /* OnboardingCollectionViewCell.swift */; };
 		942A4B2129A519FE002101A5 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2029A519FE002101A5 /* SignUpVC.swift */; };
 		942A4B2329A51FAF002101A5 /* FMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2229A51FAF002101A5 /* FMButton.swift */; };
+		942A4B2529A5CB05002101A5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2429A5CB05002101A5 /* Extensions.swift */; };
+		942A4B2829A5D207002101A5 /* FMAuthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2729A5D207002101A5 /* FMAuthHeader.swift */; };
+		942A4B2A29A5E95D002101A5 /* FMImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2929A5E95D002101A5 /* FMImageView.swift */; };
+		942A4B2C29A5EEF7002101A5 /* FMUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2B29A5EEF7002101A5 /* FMUILabel.swift */; };
+		942A4B2E29A607FF002101A5 /* FMUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2D29A607FE002101A5 /* FMUITextField.swift */; };
 		9437989629A3B40300B1268B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437989529A3B40300B1268B /* AppDelegate.swift */; };
 		9437989829A3B40300B1268B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437989729A3B40300B1268B /* SceneDelegate.swift */; };
 		9437989D29A3B40300B1268B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9437989B29A3B40300B1268B /* Main.storyboard */; };
@@ -37,6 +42,11 @@
 		942A4B1D29A47F51002101A5 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		942A4B2029A519FE002101A5 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		942A4B2229A51FAF002101A5 /* FMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMButton.swift; sourceTree = "<group>"; };
+		942A4B2429A5CB05002101A5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		942A4B2729A5D207002101A5 /* FMAuthHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMAuthHeader.swift; sourceTree = "<group>"; };
+		942A4B2929A5E95D002101A5 /* FMImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMImageView.swift; sourceTree = "<group>"; };
+		942A4B2B29A5EEF7002101A5 /* FMUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMUILabel.swift; sourceTree = "<group>"; };
+		942A4B2D29A607FE002101A5 /* FMUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMUITextField.swift; sourceTree = "<group>"; };
 		9437989229A3B40300B1268B /* FoodMIMA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodMIMA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9437989529A3B40300B1268B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9437989729A3B40300B1268B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +87,14 @@
 				942A4B2029A519FE002101A5 /* SignUpVC.swift */,
 			);
 			path = AuthController;
+			sourceTree = "<group>";
+		};
+		942A4B2629A5D1DF002101A5 /* AuthView */ = {
+			isa = PBXGroup;
+			children = (
+				942A4B2729A5D207002101A5 /* FMAuthHeader.swift */,
+			);
+			path = AuthView;
 			sourceTree = "<group>";
 		};
 		9437988929A3B40300B1268B = {
@@ -150,9 +168,13 @@
 		943798AD29A3D18900B1268B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				942A4B2629A5D1DF002101A5 /* AuthView */,
 				942A4B1C29A47F0F002101A5 /* Cells */,
 				943798B529A3EC8B00B1268B /* FMLottieAnimatedView.swift */,
 				942A4B2229A51FAF002101A5 /* FMButton.swift */,
+				942A4B2929A5E95D002101A5 /* FMImageView.swift */,
+				942A4B2B29A5EEF7002101A5 /* FMUILabel.swift */,
+				942A4B2D29A607FE002101A5 /* FMUITextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				943798BF29A4240600B1268B /* FMSizeManager.swift */,
+				942A4B2429A5CB05002101A5 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -242,6 +265,7 @@
 			mainGroup = 9437988929A3B40300B1268B;
 			packageReferences = (
 				943798B729A3F03400B1268B /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				942A4B2F29A6229F002101A5 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 9437989329A3B40300B1268B /* Products */;
 			projectDirPath = "";
@@ -275,15 +299,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				943798B129A3DB7E00B1268B /* K.swift in Sources */,
+				942A4B2A29A5E95D002101A5 /* FMImageView.swift in Sources */,
 				943798B429A3E85600B1268B /* SplashVC.swift in Sources */,
 				943798B629A3EC8B00B1268B /* FMLottieAnimatedView.swift in Sources */,
 				942A4B2329A51FAF002101A5 /* FMButton.swift in Sources */,
 				9437989629A3B40300B1268B /* AppDelegate.swift in Sources */,
 				9437989829A3B40300B1268B /* SceneDelegate.swift in Sources */,
 				943798C029A4240600B1268B /* FMSizeManager.swift in Sources */,
+				942A4B2E29A607FF002101A5 /* FMUITextField.swift in Sources */,
+				942A4B2529A5CB05002101A5 /* Extensions.swift in Sources */,
 				942A4B0F29A450C4002101A5 /* OnboardingCollectionVC.swift in Sources */,
+				942A4B2829A5D207002101A5 /* FMAuthHeader.swift in Sources */,
 				942A4B1129A478D9002101A5 /* OnBoardingPageModel.swift in Sources */,
 				942A4B2129A519FE002101A5 /* SignUpVC.swift in Sources */,
+				942A4B2C29A5EEF7002101A5 /* FMUILabel.swift in Sources */,
 				942A4B1E29A47F51002101A5 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,6 +535,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		942A4B2F29A6229F002101A5 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.11;
+			};
+		};
 		943798B729A3F03400B1268B /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";

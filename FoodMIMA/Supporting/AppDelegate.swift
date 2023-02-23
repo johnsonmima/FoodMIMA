@@ -14,8 +14,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        // Customise general navigation appearance 
+        UINavigationBar.appearance().isTranslucent = true
+        // set accent color
+        UINavigationBar.appearance().barTintColor = UIColor(named: K.Colors.accentColor);
+        
+        let newNavBarAppearance = customNavBarAppearance()
+
+            let appearance = UINavigationBar.appearance()
+            appearance.scrollEdgeAppearance = newNavBarAppearance
+            appearance.compactAppearance = newNavBarAppearance
+            appearance.standardAppearance = newNavBarAppearance
+            if #available(iOS 15.0, *) {
+                appearance.compactScrollEdgeAppearance = newNavBarAppearance
+            }
+
+        
         return true
     }
+    
+    @available(iOS 13.0, *)
+    func customNavBarAppearance() -> UINavigationBarAppearance {
+        let customNavBarAppearance = UINavigationBarAppearance()
+
+        // set navigation color background.
+        customNavBarAppearance.configureWithOpaqueBackground()
+        customNavBarAppearance.backgroundColor = .systemBackground
+
+        // Apply white colored normal and large titles.
+        customNavBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(named: K.Colors.accentColor) ?? UIColor.darkText]
+        customNavBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(named: K.Colors.accentColor) ?? UIColor.darkText]
+        customNavBarAppearance.setBackIndicatorImage(UIImage(systemName: "arrow.backward"), transitionMaskImage: UIImage(systemName: "arrow.backward"))
+        
+        
+
+        // nav bar buttons colors.
+        let barButtonItemAppearance = UIBarButtonItemAppearance(style: .plain)
+        barButtonItemAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor(named: K.Colors.accentColor) ?? UIColor.darkText]
+        barButtonItemAppearance.disabled.titleTextAttributes = [.foregroundColor: UIColor.lightText]
+        barButtonItemAppearance.highlighted.titleTextAttributes = [.foregroundColor: UIColor.label]
+        barButtonItemAppearance.focused.titleTextAttributes = [.foregroundColor: UIColor(named: K.Colors.accentColor) ?? UIColor.darkText]
+        customNavBarAppearance.buttonAppearance = barButtonItemAppearance
+        customNavBarAppearance.backButtonAppearance = barButtonItemAppearance
+        customNavBarAppearance.doneButtonAppearance = barButtonItemAppearance
+
+        return customNavBarAppearance
+    }
+    
 
     // MARK: UISceneSession Lifecycle
 

@@ -22,7 +22,7 @@ class SplashVC: UIViewController {
         
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
-        
+       
         // show loading indicator
         self.setupLoadingIndicator();
         

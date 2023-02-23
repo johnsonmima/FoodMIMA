@@ -13,6 +13,7 @@ struct K {
     struct General {
         static let SplashDelayTime = 1;
         static let AppName = "FoodMIMA";
+        static let ButtonHeight = 45
     }
     //MARK: - Colors
     struct Colors {
@@ -27,6 +28,12 @@ struct K {
             static let imageOne = "OnBFoodImage1";
             static let imageTwo = "OnBFoodImage2";
             static let imageThree = "OnBFoodImage3";
+        }
+        struct Auth {
+            static let signin = "SignIn";
+            static let signup = "SignUp";
+            static let forgotPassword = "ForgotPassword";
+            static let resetPassword = "ResetPassword";
         }
     }
     

@@ -34,23 +34,10 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
         return imageView;
     }()
     
-    private let cellTitleLabel:UILabel = {
-        let textLebel = UILabel();
-        textLebel.textColor = .label
-        textLebel.textAlignment = .left
-        textLebel.numberOfLines = 0
-        textLebel.translatesAutoresizingMaskIntoConstraints = false;
-        return textLebel;
-    }()
+    // text
+    private let cellTitleLabel:FMUILabel = FMUILabel(labelType: .primary, withTextAlignment: .left)
+    private let cellSubtitleLabel:FMUILabel = FMUILabel(labelType: .secondary, withTextAlignment: .left)
     
-    private let cellSubtitleLabel:UILabel = {
-        let textLebel = UILabel();
-        textLebel.textColor = .secondaryLabel
-        textLebel.textAlignment = .left
-        textLebel.numberOfLines = 0
-        textLebel.translatesAutoresizingMaskIntoConstraints = false;
-        return textLebel;
-    }()
     
     
     // layout size manager
@@ -58,10 +45,9 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame);
-       
       
         // setup size manager before calling view did load
-        sizeManager = FMSizeManager(withFrameWidth: self.frame.width, withHeightWidth: self.frame.height);
+        sizeManager = FMSizeManager(withFrameWidth: self.safeAreaLayoutGuide.layoutFrame.width, withHeightWidth: self.safeAreaLayoutGuide.layoutFrame.height);
 
         // set backgroundColor
         self.backgroundColor = .systemBackground;
@@ -88,6 +74,8 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
     func setupCellTextContentLayout(){
         self.addSubview(cellTitleLabel);
         self.addSubview(cellSubtitleLabel);
+        cellTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        cellSubtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             cellTitleLabel.topAnchor.constraint(equalTo: self.cellImageView.bottomAnchor, constant: sizeManager?.moderateScale(size: 60) ?? 60),
