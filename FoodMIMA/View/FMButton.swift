@@ -14,7 +14,7 @@ class FMButton: UIButton {
         super.init(frame:.zero)
         
         self.setTitle(title, for: .normal);
-        self.setTitleColor(.lightText, for: .normal);
+        self.setTitleColor(.white, for: .normal);
         self.setTitleColor(.secondaryLabel, for: .focused);
         self.titleLabel?.font = .getRegularFont(size: fontSize)
         self.backgroundColor = UIColor(named: K.Colors.accentColor);

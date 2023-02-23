@@ -125,7 +125,7 @@ class OnboardingCollectionVC: UICollectionViewController {
     //MARK: - Controller Action
     // navigate to signup screen
     @objc private func skipOrGetstartedButtonPressed(){
-        let signUpVC = SignUpVC()
+        let signUpVC = SignupVC()
         navigationController?.pushViewController(signUpVC, animated: true);
     }
     

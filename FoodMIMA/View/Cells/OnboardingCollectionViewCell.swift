@@ -15,9 +15,11 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
             guard let unwrapedData = data else { return }
             cellImageView.image = UIImage(named: unwrapedData.imageName);
             cellTitleLabel.text = unwrapedData.title;
-            cellTitleLabel.font = UIFont(name: "AvenirNext-Heavy", size: sizeManager?.fontSize(size: 24) ?? 24);
+            cellTitleLabel.font = .getHeavyFont(size: Int(sizeManager?.fontSize(size: 24) ?? 24))
             cellSubtitleLabel.text = unwrapedData.subTitle;
-            cellSubtitleLabel.font = UIFont(name: "AvenirNext-Regular", size: sizeManager?.fontSize(size: 14) ?? 14);
+            cellSubtitleLabel.font = .getRegularFont(size: Int(sizeManager?.fontSize(size: 14) ?? 14))
+            
+          
             
             
             

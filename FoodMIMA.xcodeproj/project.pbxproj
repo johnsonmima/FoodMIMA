@@ -13,13 +13,15 @@
 		942A4B1829A47DD1002101A5 /* onboarding-animation-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 942A4B1329A47DD1002101A5 /* onboarding-animation-2.json */; };
 		942A4B1929A47DD1002101A5 /* onboarding-animation-3.json in Resources */ = {isa = PBXBuildFile; fileRef = 942A4B1429A47DD1002101A5 /* onboarding-animation-3.json */; };
 		942A4B1E29A47F51002101A5 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B1D29A47F51002101A5 /* OnboardingCollectionViewCell.swift */; };
-		942A4B2129A519FE002101A5 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2029A519FE002101A5 /* SignUpVC.swift */; };
+		942A4B2129A519FE002101A5 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2029A519FE002101A5 /* SignupVC.swift */; };
 		942A4B2329A51FAF002101A5 /* FMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2229A51FAF002101A5 /* FMButton.swift */; };
 		942A4B2529A5CB05002101A5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2429A5CB05002101A5 /* Extensions.swift */; };
 		942A4B2829A5D207002101A5 /* FMAuthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2729A5D207002101A5 /* FMAuthHeader.swift */; };
 		942A4B2A29A5E95D002101A5 /* FMImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2929A5E95D002101A5 /* FMImageView.swift */; };
 		942A4B2C29A5EEF7002101A5 /* FMUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2B29A5EEF7002101A5 /* FMUILabel.swift */; };
 		942A4B2E29A607FF002101A5 /* FMUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2D29A607FE002101A5 /* FMUITextField.swift */; };
+		942A4B3329A734D8002101A5 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B3229A734D8002101A5 /* SigninVC.swift */; };
+		942A4B3529A747BC002101A5 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B3429A747BC002101A5 /* ForgotPasswordVC.swift */; };
 		9437989629A3B40300B1268B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437989529A3B40300B1268B /* AppDelegate.swift */; };
 		9437989829A3B40300B1268B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437989729A3B40300B1268B /* SceneDelegate.swift */; };
 		9437989D29A3B40300B1268B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9437989B29A3B40300B1268B /* Main.storyboard */; };
@@ -40,13 +42,15 @@
 		942A4B1329A47DD1002101A5 /* onboarding-animation-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "onboarding-animation-2.json"; sourceTree = "<group>"; };
 		942A4B1429A47DD1002101A5 /* onboarding-animation-3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "onboarding-animation-3.json"; sourceTree = "<group>"; };
 		942A4B1D29A47F51002101A5 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
-		942A4B2029A519FE002101A5 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		942A4B2029A519FE002101A5 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		942A4B2229A51FAF002101A5 /* FMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMButton.swift; sourceTree = "<group>"; };
 		942A4B2429A5CB05002101A5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		942A4B2729A5D207002101A5 /* FMAuthHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMAuthHeader.swift; sourceTree = "<group>"; };
 		942A4B2929A5E95D002101A5 /* FMImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMImageView.swift; sourceTree = "<group>"; };
 		942A4B2B29A5EEF7002101A5 /* FMUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMUILabel.swift; sourceTree = "<group>"; };
 		942A4B2D29A607FE002101A5 /* FMUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMUITextField.swift; sourceTree = "<group>"; };
+		942A4B3229A734D8002101A5 /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
+		942A4B3429A747BC002101A5 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		9437989229A3B40300B1268B /* FoodMIMA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodMIMA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9437989529A3B40300B1268B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9437989729A3B40300B1268B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,7 +88,9 @@
 		942A4B1F29A50CE3002101A5 /* AuthController */ = {
 			isa = PBXGroup;
 			children = (
-				942A4B2029A519FE002101A5 /* SignUpVC.swift */,
+				942A4B2029A519FE002101A5 /* SignupVC.swift */,
+				942A4B3229A734D8002101A5 /* SigninVC.swift */,
+				942A4B3429A747BC002101A5 /* ForgotPasswordVC.swift */,
 			);
 			path = AuthController;
 			sourceTree = "<group>";
@@ -311,7 +317,9 @@
 				942A4B0F29A450C4002101A5 /* OnboardingCollectionVC.swift in Sources */,
 				942A4B2829A5D207002101A5 /* FMAuthHeader.swift in Sources */,
 				942A4B1129A478D9002101A5 /* OnBoardingPageModel.swift in Sources */,
-				942A4B2129A519FE002101A5 /* SignUpVC.swift in Sources */,
+				942A4B3329A734D8002101A5 /* SigninVC.swift in Sources */,
+				942A4B3529A747BC002101A5 /* ForgotPasswordVC.swift in Sources */,
+				942A4B2129A519FE002101A5 /* SignupVC.swift in Sources */,
 				942A4B2C29A5EEF7002101A5 /* FMUILabel.swift in Sources */,
 				942A4B1E29A47F51002101A5 /* OnboardingCollectionViewCell.swift in Sources */,
 			);

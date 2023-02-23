@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
+
         // Customise general navigation appearance 
         UINavigationBar.appearance().isTranslucent = true
         // set accent color
@@ -23,12 +24,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let newNavBarAppearance = customNavBarAppearance()
 
             let appearance = UINavigationBar.appearance()
+        
             appearance.scrollEdgeAppearance = newNavBarAppearance
             appearance.compactAppearance = newNavBarAppearance
             appearance.standardAppearance = newNavBarAppearance
             if #available(iOS 15.0, *) {
                 appearance.compactScrollEdgeAppearance = newNavBarAppearance
             }
+        
+    
 
         
         return true
@@ -46,6 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         customNavBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(named: K.Colors.accentColor) ?? UIColor.darkText]
         customNavBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(named: K.Colors.accentColor) ?? UIColor.darkText]
         customNavBarAppearance.setBackIndicatorImage(UIImage(systemName: "arrow.backward"), transitionMaskImage: UIImage(systemName: "arrow.backward"))
+        
         
         
 

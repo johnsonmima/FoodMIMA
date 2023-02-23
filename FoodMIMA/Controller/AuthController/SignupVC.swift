@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpVC: UIViewController {
+class SignupVC: UIViewController {
     
     // loading animated view
     let loadingAnimation = FMLottieAnimatedView(withLottieFile: "splash-loading", withAnimationSpeed: 1.6);
@@ -89,11 +89,11 @@ class SignUpVC: UIViewController {
     }()
     
     // signup button
-    private let signupButton = FMButton(title: "Continue")
+    private let signupButton = FMButton(title: "Create Account")
     
     // privacy and condition
     private let loginLink:UITextView = {
-        let atrributes = [NSAttributedString.Key.font:UIFont.getRegularFont(size: 12)]
+        let atrributes = [NSAttributedString.Key.font:UIFont.getRegularFont(size: 15)]
         var attributedString = NSMutableAttributedString(string: "Joined us before? Login", attributes: atrributes)
         attributedString.addAttribute(.link, value: "login://loginScreen", range: (attributedString.string as NSString).range(of: "Login"))
         
@@ -139,9 +139,19 @@ class SignUpVC: UIViewController {
         // adjust the scroll view when keyboard is present
         self.setupKeyboardNotificationObserver()
         
-        
-        
-        
+    }
+    //MARK: - Show the NavBar
+    override func viewWillAppear(_ animated: Bool) {
+        // remove the title text
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.isHidden = false
+    }
+  
+    
+    //MARK: - Hide the NavBAr
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = true
     }
     
     
@@ -198,7 +208,7 @@ class SignUpVC: UIViewController {
         
         NSLayoutConstraint.activate([
             authHeader.topAnchor.constraint(equalTo: self.containerView.topAnchor, constant: sizeManager?.moderateScale(size: 50) ?? 50),
-            authHeader.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor, constant: sizeManager?.moderateScale(size: -40) ?? 40),
+            authHeader.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor, constant: sizeManager?.moderateScale(size: -40) ?? -40),
             authHeader.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor, constant: sizeManager?.moderateScale(size: 40) ?? 40),
             authHeader.heightAnchor.constraint(equalTo: self.containerView.heightAnchor, multiplier: 0.3)
             
@@ -249,10 +259,10 @@ class SignUpVC: UIViewController {
     func setupLoadingIndicatorLayout(){
         containerView.addSubview(loadingAnimation)
         loadingAnimation.translatesAutoresizingMaskIntoConstraints = false
-        loadingAnimation.isHidden = true
+        loadingAnimation.isHidden = false
         
         NSLayoutConstraint.activate([
-            loadingAnimation.topAnchor.constraint(equalTo: self.privacyAndConditionTextView.bottomAnchor, constant: sizeManager?.moderateScale(size: 5) ?? 5),
+            loadingAnimation.topAnchor.constraint(equalTo: self.privacyAndConditionTextView.bottomAnchor, constant: sizeManager?.moderateScale(size: 15) ?? 15),
             loadingAnimation.widthAnchor.constraint(equalToConstant: sizeManager?.horizontalScale(size: 40) ?? 40),
             loadingAnimation.heightAnchor.constraint(equalToConstant: sizeManager?.verticalScale(size: 40) ?? 40),
             loadingAnimation.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
@@ -298,7 +308,7 @@ class SignUpVC: UIViewController {
 
 
 //MARK: - UITextViewDelegate
-extension SignUpVC : UITextViewDelegate{
+extension SignupVC : UITextViewDelegate{
     // handle Terms and Condition Clicked
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         if URL.scheme == "terms" {
@@ -309,7 +319,8 @@ extension SignUpVC : UITextViewDelegate{
         }
         // navigate to login screen
         else if URL.scheme == "login" {
-            print("Login Button Clicked")
+            let signinVC = SigninVC()
+            self.navigationController?.pushViewController(signinVC, animated: true);
         }
         
         return false
@@ -327,7 +338,7 @@ extension SignUpVC : UITextViewDelegate{
 
 
 //MARK: - UITextFieldDelegate and Keyboard settings
-extension SignUpVC : UITextFieldDelegate {
+extension SignupVC : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == userEmailField {
             userFullnameField.becomeFirstResponder()
