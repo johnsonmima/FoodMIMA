@@ -46,7 +46,7 @@ class FMUITextField: UITextField {
             self.returnKeyType = .done
         default:
             self.keyboardType = .default
-            self.returnKeyType = .done
+            self.returnKeyType = .next
             
             
         }

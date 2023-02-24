@@ -46,7 +46,7 @@ class SignupVC: UIViewController {
     
     // stack view for text fields
     private let authTextFieldStackView:UIStackView = {
-       let stackView = UIStackView()
+        let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 10
         stackView.distribution = .fillEqually
@@ -56,13 +56,14 @@ class SignupVC: UIViewController {
         return stackView;
     }()
     
-   
-   
+    
+    
     //TODO: Format Mobile Input
     // Text fields
     let userEmailField:FMUITextField = FMUITextField(input: .email, placeholder: "Email Address")
-    let userMobileField:FMUITextField = FMUITextField(input: .mobile, placeholder: "Mobile")
     let userFullnameField:FMUITextField = FMUITextField(input: .text, placeholder: "Full Name")
+    let userPasswordField:FMUITextField = FMUITextField(input: .password, placeholder: "Password")
+    
     
     // privacy and condition
     let privacyAndConditionTextView:UITextView = {
@@ -145,7 +146,7 @@ class SignupVC: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.isHidden = false
     }
-  
+    
     
     //MARK: - Hide the NavBAr
     override func viewWillDisappear(_ animated: Bool) {
@@ -190,7 +191,7 @@ class SignupVC: UIViewController {
     }
     
     
-
+    
     
     //MARK: - Set up scroll view
     func setupScrollViewLayout(){
@@ -221,12 +222,13 @@ class SignupVC: UIViewController {
         // setup delegate
         userEmailField.delegate = self
         userFullnameField.delegate = self
-        userMobileField.delegate = self
+        userPasswordField.delegate = self
         
         // stackView subViews
         authTextFieldStackView.addArrangedSubview(userEmailField)
-        authTextFieldStackView.addArrangedSubview(userMobileField)
         authTextFieldStackView.addArrangedSubview(userFullnameField)
+        authTextFieldStackView.addArrangedSubview(userPasswordField)
+        
         
         
         NSLayoutConstraint.activate([
@@ -234,7 +236,7 @@ class SignupVC: UIViewController {
             authTextFieldStackView.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor, constant: -40),
             authTextFieldStackView.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor, constant: 40),
             authTextFieldStackView.heightAnchor.constraint(equalTo: self.containerView.heightAnchor, multiplier: 0.2)
-        
+            
         ])
         
         
@@ -249,7 +251,7 @@ class SignupVC: UIViewController {
             privacyAndConditionTextView.topAnchor.constraint(equalTo: self.authTextFieldStackView.bottomAnchor, constant: sizeManager?.moderateScale(size: 2) ?? 2),
             privacyAndConditionTextView.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor, constant: -40),
             privacyAndConditionTextView.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor, constant: 40),
-        
+            
         ])
     }
     
@@ -289,16 +291,52 @@ class SignupVC: UIViewController {
             loginLink.topAnchor.constraint(equalTo: self.signupButton.bottomAnchor, constant:sizeManager?.moderateScale(size: 5) ?? 5),
             loginLink.centerXAnchor.constraint(equalTo: self.containerView.centerXAnchor),
             loginLink.heightAnchor.constraint(equalTo: self.containerView.heightAnchor, multiplier: 0.05)
-        
+            
         ])
         
     }
     
     //MARK: - Signup Button Clicked
     @objc private func signupButtonClicked(){
-        let welcomeOnboardVC = WelcomeOnboard()
-        navigationController?.pushViewController(welcomeOnboardVC, animated: true)
-       
+        // values
+        guard let email = userEmailField.text else { return }
+        guard let fullName = userFullnameField.text else { return }
+        guard let password = userPasswordField.text else { return }
+        
+        
+        if(FMValidator.isEmpty(with: email)){
+            FMAlert.showEmptyFieldAlert(on: self, forFieldName: "email address")
+        }
+        else if (FMValidator.isInvalidEmail(with: email)){
+            FMAlert.showInvalidEmailAlert(on: self)
+        }
+        else if(FMValidator.isEmpty(with: fullName)){
+            FMAlert.showEmptyFieldAlert(on: self, forFieldName: "full name")
+        }
+        else if (FMValidator.isInvalidFullName(with: fullName)){
+            FMAlert.showInvalidFullNameAlert(on: self)
+        }
+        else if(FMValidator.isEmpty(with: password)){
+            FMAlert.showEmptyFieldAlert(on: self, forFieldName: "password")
+        }
+        else if(FMValidator.isInvalidPassword(with: password)){
+            FMAlert.showInvalidPasswordAlert(on: self)
+        }
+        else{
+            // create user account
+            
+        }
+        
+        
+        
+        
+    
+        
+        
+        
+        //        let welcomeOnboardVC = WelcomeOnboard()
+        //        navigationController?.pushViewController(welcomeOnboardVC, animated: true)
+        
     }
     
     
@@ -343,13 +381,13 @@ extension SignupVC : UITextFieldDelegate {
         if textField == userEmailField {
             userFullnameField.becomeFirstResponder()
         }
-        else if textField == userMobileField{
-            userFullnameField.becomeFirstResponder()
+        else if textField == userFullnameField {
+            userPasswordField.becomeFirstResponder()
         }
         else{
             textField.resignFirstResponder()
         }
-       
+        
         return true
     }
     
