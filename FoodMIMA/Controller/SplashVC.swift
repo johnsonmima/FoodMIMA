@@ -14,7 +14,7 @@ class SplashVC: UIViewController {
     var sizeManager:FMSizeManager? = nil;
     
     // loading animated view
-    let splashLoadingAnimation = FMLottieAnimatedView(withLottieFile: "splash-loading", withAnimationSpeed: 1.6);
+    let splashLoadingAnimation = FMLottieAnimatedView(withLottieFile: K.LottieFiles.splashSpinner, withAnimationSpeed: 1.6);
     
     override func viewDidLoad() {
         // setup layout manager before calling view did load

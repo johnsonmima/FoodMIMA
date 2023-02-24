@@ -10,7 +10,7 @@ import UIKit
 class SigninVC: UIViewController {
     
     // loading animated view
-    let loadingAnimation = FMLottieAnimatedView(withLottieFile: "splash-loading", withAnimationSpeed: 1.6);
+    let loadingAnimation = FMLottieAnimatedView(withLottieFile: K.LottieFiles.loadingSpinner, withAnimationSpeed: 1.6);
     
     // layout size manager
     private var sizeManager:FMSizeManager? = nil;
@@ -226,7 +226,7 @@ class SigninVC: UIViewController {
             authHeader.topAnchor.constraint(equalTo: self.containerView.topAnchor, constant: sizeManager?.moderateScale(size: 50) ?? 50),
             authHeader.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor, constant: sizeManager?.moderateScale(size: -40) ?? -40),
             authHeader.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor, constant: sizeManager?.moderateScale(size: 40) ?? 40),
-            authHeader.heightAnchor.constraint(equalTo: self.containerView.heightAnchor, multiplier: 0.3)
+            authHeader.heightAnchor.constraint(equalTo: self.containerView.heightAnchor, multiplier: 0.35)
             
         ])
         
@@ -240,7 +240,6 @@ class SigninVC: UIViewController {
         userEmailField.delegate = self
         userPasswordField.delegate = self
        
-        
         // stackView subViews
         authTextFieldStackView.addArrangedSubview(userEmailField)
         authTextFieldStackView.addArrangedSubview(userPasswordField)
@@ -308,7 +307,7 @@ class SigninVC: UIViewController {
             
             registerLink.topAnchor.constraint(equalTo: self.signinButton.bottomAnchor, constant:sizeManager?.moderateScale(size: 5) ?? 5),
             registerLink.centerXAnchor.constraint(equalTo: self.containerView.centerXAnchor),
-            registerLink.heightAnchor.constraint(equalTo: self.containerView.heightAnchor, multiplier: 0.04)
+            registerLink.heightAnchor.constraint(equalTo: self.containerView.heightAnchor, multiplier: 0.05)
         
         ])
         
@@ -330,7 +329,8 @@ extension SigninVC : UITextViewDelegate{
     // handle Terms and Condition Clicked
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         if URL.scheme == "register" {
-            self.navigationController?.popViewController(animated: true)
+            let signupVC = SignupVC()
+            self.navigationController?.pushViewController(signupVC, animated: true)
         }
         else if URL.scheme == "forgotPassword" {
             let forgotPasswordVC = ForgotPasswordVC()
@@ -341,7 +341,7 @@ extension SigninVC : UITextViewDelegate{
     }
     
     
-    //
+    // textViewDidChange
     func textViewDidChange(_ textView: UITextView) {
         textView.delegate = nil
         textView.selectedTextRange = nil

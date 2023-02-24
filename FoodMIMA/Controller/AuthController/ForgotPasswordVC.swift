@@ -10,7 +10,7 @@ import UIKit
 class ForgotPasswordVC: UIViewController {
     
     // loading animated view
-    let loadingAnimation = FMLottieAnimatedView(withLottieFile: "splash-loading", withAnimationSpeed: 1.6);
+    let loadingAnimation = FMLottieAnimatedView(withLottieFile: K.LottieFiles.loadingSpinner, withAnimationSpeed: 1.6);
     
     // layout size manager
     private var sizeManager:FMSizeManager? = nil;

@@ -41,67 +41,57 @@ class FMAuthHeader: UIView {
             imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
             imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor ),
             imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            imageView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: withTwoHeading ? 0.7 : 0.8)
+            imageView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: withTwoHeading ? 0.7 : 0.75)
         ])
         
     }
     
     //MARK: - setup auth heading
     func setupAuthHeading(title:String, secondTitle:String, withTwoHeading:Bool){
-        // if with two heading is false
-        if(!withTwoHeading){
-            self.addSubview(textHeading)
-            self.textHeading.translatesAutoresizingMaskIntoConstraints = false
+        
+        let headingTextView:UITextView = {
             
-            textHeading.text = title
-            textHeading.font = .getDemiBoldFont(size: 32)
+            let paragraphStyle = NSMutableParagraphStyle()
             
+            let attributedString = NSMutableAttributedString()
+            
+            let headingTextAttributes = [NSAttributedString.Key.paragraphStyle:paragraphStyle, NSAttributedString.Key.foregroundColor:UIColor.label, NSAttributedString.Key.font: UIFont.getDemiBoldFont(size: 32)]
+            let subHeadingTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.label, NSAttributedString.Key.paragraphStyle:paragraphStyle, NSAttributedString.Key.font: UIFont.getDemiBoldFont(size: 32)]
+                
+            let headingText = NSAttributedString(string: title, attributes: headingTextAttributes)
+            attributedString.append(headingText)
+            
+            // if withTwoHeading
+            if(withTwoHeading){
+                let subHeading = NSAttributedString(string: "\n\(secondTitle)", attributes:subHeadingTextAttributes)
+                attributedString.append(subHeading)
+            }
+            
+
+            paragraphStyle.alignment = .left
+            let textView = UITextView()
+            textView.backgroundColor = .systemBackground
+            textView.isEditable = false
+            textView.isSelectable = false
+            textView.isScrollEnabled = false
+            textView.attributedText = attributedString
+            return textView;
+        }()
+        
+        
+            self.addSubview(headingTextView)
+            headingTextView.translatesAutoresizingMaskIntoConstraints = false
             
             NSLayoutConstraint.activate([
-                textHeading.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: 0),
-                textHeading.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-                textHeading.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-                textHeading.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.2)
+                headingTextView.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: 0),
+                headingTextView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+                headingTextView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                headingTextView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: withTwoHeading ? 0.3 : 0.25)
             ])
         }
         
-        else {
-            // create a new heading
-             let newHeading:UITextView = {
-                let atrributes = [NSAttributedString.Key.font:UIFont.getDemiBoldFont(size: 32)]
-                 let attributedString = NSMutableAttributedString(string: "\(title)\n\(secondTitle)", attributes: atrributes)
-                // modify UITextView
-                let textView = UITextView()
-                 textView.textAlignment = .left
-                textView.backgroundColor = .clear
-                textView.textColor = .label
-                textView.isSelectable = true
-                textView.isEditable = false
-                textView.isScrollEnabled = false
-                textView.attributedText = attributedString
-                textView.translatesAutoresizingMaskIntoConstraints = false
-                
-                
-                return textView;
-            }()
-            
-            
-            self.addSubview(newHeading)
-            NSLayoutConstraint.activate([
-                newHeading.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: 0),
-                newHeading.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -0),
-                newHeading.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
-                newHeading.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3)
-            ])
-            
-            
-            
-            
-        }
         
-        
-        
-    }
+    
     
     
     

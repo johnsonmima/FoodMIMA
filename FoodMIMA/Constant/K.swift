@@ -22,6 +22,14 @@ struct K {
         
     }
     
+    //MARK: - Lottie Animation
+    struct LottieFiles{
+        static let loadingSpinner = "splash-loading";
+        static let splashSpinner = "splash-loading";
+        // other assets
+        static let welcomeOnboard = "welcome-onboard";
+    }
+    
     //MARK: - Images
     struct Images{
         struct OnBoarding{

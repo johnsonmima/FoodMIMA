@@ -1,7 +1,6 @@
 //
 //  SignUpVC.swift
 //  FoodMIMA
-//
 //  Created by Johnson Olusegun on 2/21/23.
 //
 
@@ -10,7 +9,7 @@ import UIKit
 class SignupVC: UIViewController {
     
     // loading animated view
-    let loadingAnimation = FMLottieAnimatedView(withLottieFile: "splash-loading", withAnimationSpeed: 1.6);
+    let loadingAnimation = FMLottieAnimatedView(withLottieFile: K.LottieFiles.loadingSpinner, withAnimationSpeed: 1.6);
     
     // layout size manager
     private var sizeManager:FMSizeManager? = nil;
@@ -202,7 +201,6 @@ class SignupVC: UIViewController {
     
     //MARK: - Setup Auth Screen Header
     func setupAuthHeaderLayout(){
-        
         containerView.addSubview(authHeader);
         authHeader.translatesAutoresizingMaskIntoConstraints = false;
         
@@ -210,7 +208,7 @@ class SignupVC: UIViewController {
             authHeader.topAnchor.constraint(equalTo: self.containerView.topAnchor, constant: sizeManager?.moderateScale(size: 50) ?? 50),
             authHeader.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor, constant: sizeManager?.moderateScale(size: -40) ?? -40),
             authHeader.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor, constant: sizeManager?.moderateScale(size: 40) ?? 40),
-            authHeader.heightAnchor.constraint(equalTo: self.containerView.heightAnchor, multiplier: 0.3)
+            authHeader.heightAnchor.constraint(equalTo: self.containerView.heightAnchor, multiplier: 0.35)
             
         ])
         
@@ -290,7 +288,7 @@ class SignupVC: UIViewController {
             
             loginLink.topAnchor.constraint(equalTo: self.signupButton.bottomAnchor, constant:sizeManager?.moderateScale(size: 5) ?? 5),
             loginLink.centerXAnchor.constraint(equalTo: self.containerView.centerXAnchor),
-            loginLink.heightAnchor.constraint(equalTo: self.containerView.heightAnchor, multiplier: 0.04)
+            loginLink.heightAnchor.constraint(equalTo: self.containerView.heightAnchor, multiplier: 0.05)
         
         ])
         
@@ -298,7 +296,9 @@ class SignupVC: UIViewController {
     
     //MARK: - Signup Button Clicked
     @objc private func signupButtonClicked(){
-        print("Clicked")
+        let welcomeOnboardVC = WelcomeOnboard()
+        navigationController?.pushViewController(welcomeOnboardVC, animated: true)
+       
     }
     
     
