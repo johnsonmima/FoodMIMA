@@ -104,7 +104,7 @@ class WelcomeOnboard: UIViewController {
             self.loginButton.topAnchor.constraint(equalTo: welcomeOnboardText.bottomAnchor, constant: sizeManager?.moderateScale(size: 20) ?? 20),
             self.loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: sizeManager?.moderateScale(size: -50) ?? -50),
             self.loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: sizeManager?.moderateScale(size: 50) ?? 50),
-            self.loginButton.heightAnchor.constraint(equalToConstant: sizeManager?.moderateScale(size: Double(K.General.ButtonHeight)) ?? Double(K.General.ButtonHeight))
+            self.loginButton.heightAnchor.constraint(equalToConstant: sizeManager?.moderateScale(size: Double(K.General.buttonHeight)) ?? Double(K.General.buttonHeight))
             
         ])
     }

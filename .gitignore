@@ -4,6 +4,9 @@
 
 ## Firebase Config Here
 /FoodMIMA/GoogleService-Info.plist
+/GoogleService-Info.plist
+GoogleService-Info.plist
+.GoogleService-Info.plist
 
 ## User settings
 xcuserdata/

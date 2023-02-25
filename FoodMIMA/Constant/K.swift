@@ -11,9 +11,10 @@ struct K {
     
     //MARK: - General
     struct General {
-        static let SplashDelayTime = 1;
-        static let AppName = "FoodMIMA";
-        static let ButtonHeight = 45
+        static let SplashDelayTime = 2
+        static let AppName = "FoodMIMA"
+        static let buttonHeight = 45
+        static let isUserLoggedIn = "isUserLoggedIn"
     }
     //MARK: - Colors
     struct Colors {
@@ -44,6 +45,20 @@ struct K {
             static let resetPassword = "ResetPassword";
         }
     }
+    
+    //MARK: - Firebase
+    struct Firebase{
+        struct UserCollection{
+            static let collectionName = "users"
+            static let fullName = "fullName"
+            static let email = "email"
+            
+        }
+        
+        
+        
+    }
+    
     
     
     //MARK: - ReuseIdentifier

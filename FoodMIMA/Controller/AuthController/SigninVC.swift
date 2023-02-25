@@ -8,7 +8,8 @@
 import UIKit
 
 class SigninVC: UIViewController {
-    
+    // firebase
+    private var firebase = FMFirebase()
     // loading animated view
     let loadingAnimation = FMLottieAnimatedView(withLottieFile: K.LottieFiles.loadingSpinner, withAnimationSpeed: 1.6);
     
@@ -47,7 +48,7 @@ class SigninVC: UIViewController {
     
     // stack view for text fields
     private let authTextFieldStackView:UIStackView = {
-       let stackView = UIStackView()
+        let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 10
         stackView.distribution = .fillEqually
@@ -57,8 +58,8 @@ class SigninVC: UIViewController {
         return stackView;
     }()
     
-   
-   
+    
+    
     //TODO: Format Mobile Input
     // Text fields
     let userEmailField:FMUITextField = FMUITextField(input: .email, placeholder: "Email Address")
@@ -67,7 +68,7 @@ class SigninVC: UIViewController {
     // forgot bottom Stack View
     // stack view for text fields
     private let forgotPasswordLinkStackView:UIStackView = {
-       let stackView = UIStackView()
+        let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 10
         stackView.distribution = .fill
@@ -97,8 +98,8 @@ class SigninVC: UIViewController {
         return textView;
     }()
     
-   
-
+    
+    
     // register button
     private let signinButton = FMButton(title: "Login")
     
@@ -128,6 +129,8 @@ class SigninVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //delegate
+        firebase.delegate = self
         // setup size manager before calling view did load
         sizeManager = FMSizeManager(withFrameWidth: self.view.safeAreaLayoutGuide.layoutFrame.width, withHeightWidth: self.view.safeAreaLayoutGuide.layoutFrame.height);
         // set background color
@@ -168,7 +171,7 @@ class SigninVC: UIViewController {
         navigationController?.navigationBar.isHidden = false
     }
     
-   
+    
     
     
     
@@ -207,7 +210,8 @@ class SigninVC: UIViewController {
     }
     
     
-
+    
+    
     
     //MARK: - Set up scroll view
     func setupScrollViewLayout(){
@@ -239,11 +243,11 @@ class SigninVC: UIViewController {
         // setup delegate
         userEmailField.delegate = self
         userPasswordField.delegate = self
-       
+        
         // stackView subViews
         authTextFieldStackView.addArrangedSubview(userEmailField)
         authTextFieldStackView.addArrangedSubview(userPasswordField)
-    
+        
         
         
         NSLayoutConstraint.activate([
@@ -251,7 +255,7 @@ class SigninVC: UIViewController {
             authTextFieldStackView.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor, constant: -40),
             authTextFieldStackView.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor, constant: 40),
             authTextFieldStackView.heightAnchor.constraint(equalTo: self.containerView.heightAnchor, multiplier: 0.15)
-        
+            
         ])
         
         
@@ -268,7 +272,7 @@ class SigninVC: UIViewController {
             forgotPasswordLinkStackView.topAnchor.constraint(equalTo: self.authTextFieldStackView.bottomAnchor, constant: sizeManager?.moderateScale(size: 2) ?? 2),
             forgotPasswordLinkStackView.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor, constant: -40),
             forgotPasswordLinkStackView.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor, constant: 40),
-        
+            
         ])
     }
     
@@ -276,7 +280,7 @@ class SigninVC: UIViewController {
     func setupLoadingIndicatorLayout(){
         containerView.addSubview(loadingAnimation)
         loadingAnimation.translatesAutoresizingMaskIntoConstraints = false
-        loadingAnimation.isHidden = false
+        loadingAnimation.isHidden = true
         
         NSLayoutConstraint.activate([
             loadingAnimation.topAnchor.constraint(equalTo: self.forgotPasswordLinkStackView.bottomAnchor, constant: sizeManager?.moderateScale(size: 15) ?? 15),
@@ -308,14 +312,38 @@ class SigninVC: UIViewController {
             registerLink.topAnchor.constraint(equalTo: self.signinButton.bottomAnchor, constant:sizeManager?.moderateScale(size: 5) ?? 5),
             registerLink.centerXAnchor.constraint(equalTo: self.containerView.centerXAnchor),
             registerLink.heightAnchor.constraint(equalTo: self.containerView.heightAnchor, multiplier: 0.05)
-        
+            
         ])
         
     }
     
+    
+    
+    
+    
     //MARK: - Signup Button Clicked
     @objc private func signinButtonClicked(){
-        print("Clicked")
+        // values
+        guard let email = userEmailField.text else { return }
+        guard let password = userPasswordField.text else { return }
+        
+        
+        if(FMValidator.isEmpty(with: email)){
+            FMAlert.showEmptyFieldAlert(on: self, forFieldName: "email address")
+        }
+        else if (FMValidator.isInvalidEmail(with: email)){
+            FMAlert.showInvalidEmailAlert(on: self)
+        }
+        
+        else if(FMValidator.isEmpty(with: password)){
+            FMAlert.showEmptyFieldAlert(on: self, forFieldName: "password")
+        }
+        else{
+            // create user account
+            firebase.signInUser(withEmail: email, and: password)
+        }
+        
+        
     }
     
     
@@ -323,6 +351,44 @@ class SigninVC: UIViewController {
     
 }
 
+//MARK: - FMFirebaseDelegete
+extension SigninVC:FMFirebaseDelegete {
+    
+    // show loading indicator
+    func requestStarted() {
+        DispatchQueue.main.async {
+            self.loadingAnimation.isHidden = false;
+            self.signinButton.isEnabled = false
+        }
+    }
+    // hide loading indicator
+    func requestComplete() {
+        DispatchQueue.main.async {
+            self.loadingAnimation.isHidden = true;
+            self.signinButton.isEnabled = true
+            
+        }
+    }
+    
+    // error occured
+    func errorOccured(with message: String) {
+        FMAlert.showFirebaseErrorAlert(on: self, with:message)
+    }
+    // request successful
+    func requestSuccessful() {
+        // back to splash screen
+        //        let homeVC = HomeVC()
+        //        navigationController?.pushViewController(homeVC, animated: false)
+        DispatchQueue.main.async {
+            let splashScreen = SplashVC()
+            self.navigationController?.pushViewController(splashScreen, animated: false)
+        }
+        
+        
+    }
+    
+    
+}
 
 //MARK: - UITextViewDelegate
 extension SigninVC : UITextViewDelegate{
@@ -360,7 +426,7 @@ extension SigninVC : UITextFieldDelegate {
         else{
             textField.resignFirstResponder()
         }
-       
+        
         return true
     }
     

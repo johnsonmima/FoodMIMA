@@ -7,10 +7,7 @@
 
 import UIKit
 
-
 class OnboardingCollectionVC: UICollectionViewController {
-    
-    
     // Screen Data
     private let pageData:[OnBoardingPageModel] = OnBoardingPageModelData.getAllScreenData();
     
@@ -51,10 +48,8 @@ class OnboardingCollectionVC: UICollectionViewController {
     
     
     
-    
-    
+
     override func viewDidLoad() {
-        
         // setup size manager before calling view did load
         sizeManager = FMSizeManager(withFrameWidth: self.view.safeAreaLayoutGuide.layoutFrame.width, withHeightWidth: self.view.safeAreaLayoutGuide.layoutFrame.height);
         

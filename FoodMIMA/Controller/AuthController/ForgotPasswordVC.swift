@@ -204,7 +204,7 @@ class ForgotPasswordVC: UIViewController {
     func setupLoadingIndicatorLayout(){
         containerView.addSubview(loadingAnimation)
         loadingAnimation.translatesAutoresizingMaskIntoConstraints = false
-        loadingAnimation.isHidden = false
+        loadingAnimation.isHidden = true
 
         NSLayoutConstraint.activate([
             loadingAnimation.topAnchor.constraint(equalTo: self.userEmailField.bottomAnchor, constant: sizeManager?.moderateScale(size: 15) ?? 15),

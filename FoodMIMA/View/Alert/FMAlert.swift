@@ -51,6 +51,11 @@ extension FMAlert {
         self.showBasicAlert(on: vc, withTitle: "Password!", withMessage: "Minimum of 6 character, with at least 1 alphabet & 1 special character")
     }
     
+    //MARK: - Firebase Error Alert
+    static func showFirebaseErrorAlert(on vc: UIViewController, with message:String) {
+        self.showBasicAlert(on: vc, withTitle: "", withMessage: message)
+    }
+    
     
     
     

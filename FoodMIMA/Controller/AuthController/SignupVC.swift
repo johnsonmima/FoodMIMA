@@ -7,6 +7,8 @@
 import UIKit
 
 class SignupVC: UIViewController {
+    // firebase
+    private var firebase = FMFirebase()
     
     // loading animated view
     let loadingAnimation = FMLottieAnimatedView(withLottieFile: K.LottieFiles.loadingSpinner, withAnimationSpeed: 1.6);
@@ -116,6 +118,8 @@ class SignupVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // set the delegate
+        firebase.delegate = self
         // setup size manager before calling view did load
         sizeManager = FMSizeManager(withFrameWidth: self.view.safeAreaLayoutGuide.layoutFrame.width, withHeightWidth: self.view.safeAreaLayoutGuide.layoutFrame.height);
         // set background color
@@ -259,7 +263,7 @@ class SignupVC: UIViewController {
     func setupLoadingIndicatorLayout(){
         containerView.addSubview(loadingAnimation)
         loadingAnimation.translatesAutoresizingMaskIntoConstraints = false
-        loadingAnimation.isHidden = false
+        loadingAnimation.isHidden = true
         
         NSLayoutConstraint.activate([
             loadingAnimation.topAnchor.constraint(equalTo: self.privacyAndConditionTextView.bottomAnchor, constant: sizeManager?.moderateScale(size: 15) ?? 15),
@@ -324,18 +328,9 @@ class SignupVC: UIViewController {
         }
         else{
             // create user account
-            
+            firebase.createNewAccount(withEmail: email, and: password, for: fullName)
         }
         
-        
-        
-        
-    
-        
-        
-        
-        //        let welcomeOnboardVC = WelcomeOnboard()
-        //        navigationController?.pushViewController(welcomeOnboardVC, animated: true)
         
     }
     
@@ -343,6 +338,41 @@ class SignupVC: UIViewController {
     
     
 }
+
+//MARK: - FMFirebaseDelegete
+extension SignupVC:FMFirebaseDelegete {
+    
+    
+    
+    // show loading indicator
+    func requestStarted() {
+        DispatchQueue.main.async {
+            self.loadingAnimation.isHidden = false;
+            self.signupButton.isEnabled = false
+        }
+    }
+    // hide loading indicator
+    func requestComplete() {
+        DispatchQueue.main.async {
+            self.loadingAnimation.isHidden = true;
+            self.signupButton.isEnabled = true
+            
+        }
+    }
+    
+    // error occured
+    func errorOccured(with message: String) {
+        FMAlert.showFirebaseErrorAlert(on: self, with:message)
+    }
+    // request successful
+    func requestSuccessful() {
+        let welcomeOnboardVC = WelcomeOnboard()
+        navigationController?.pushViewController(welcomeOnboardVC, animated: true)
+    }
+    
+    
+}
+
 
 
 //MARK: - UITextViewDelegate
