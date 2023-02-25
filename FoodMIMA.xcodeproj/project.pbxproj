@@ -9,12 +9,26 @@
 /* Begin PBXBuildFile section */
 		942A4B0F29A450C4002101A5 /* OnboardingCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B0E29A450C4002101A5 /* OnboardingCollectionVC.swift */; };
 		942A4B1129A478D9002101A5 /* OnBoardingPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B1029A478D9002101A5 /* OnBoardingPageModel.swift */; };
-		942A4B1729A47DD1002101A5 /* onboarding-animation-1.json in Resources */ = {isa = PBXBuildFile; fileRef = 942A4B1229A47DD1002101A5 /* onboarding-animation-1.json */; };
-		942A4B1829A47DD1002101A5 /* onboarding-animation-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 942A4B1329A47DD1002101A5 /* onboarding-animation-2.json */; };
-		942A4B1929A47DD1002101A5 /* onboarding-animation-3.json in Resources */ = {isa = PBXBuildFile; fileRef = 942A4B1429A47DD1002101A5 /* onboarding-animation-3.json */; };
 		942A4B1E29A47F51002101A5 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B1D29A47F51002101A5 /* OnboardingCollectionViewCell.swift */; };
-		942A4B2129A519FE002101A5 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2029A519FE002101A5 /* SignUpVC.swift */; };
+		942A4B2129A519FE002101A5 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2029A519FE002101A5 /* SignupVC.swift */; };
 		942A4B2329A51FAF002101A5 /* FMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2229A51FAF002101A5 /* FMButton.swift */; };
+		942A4B2529A5CB05002101A5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2429A5CB05002101A5 /* Extensions.swift */; };
+		942A4B2829A5D207002101A5 /* FMAuthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2729A5D207002101A5 /* FMAuthHeader.swift */; };
+		942A4B2A29A5E95D002101A5 /* FMImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2929A5E95D002101A5 /* FMImageView.swift */; };
+		942A4B2C29A5EEF7002101A5 /* FMUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2B29A5EEF7002101A5 /* FMUILabel.swift */; };
+		942A4B2E29A607FF002101A5 /* FMUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B2D29A607FE002101A5 /* FMUITextField.swift */; };
+		942A4B3329A734D8002101A5 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B3229A734D8002101A5 /* SigninVC.swift */; };
+		942A4B3529A747BC002101A5 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B3429A747BC002101A5 /* ForgotPasswordVC.swift */; };
+		942A4B3729A7B5B3002101A5 /* WelcomeOnboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B3629A7B5B3002101A5 /* WelcomeOnboard.swift */; };
+		942A4B3929A7B681002101A5 /* welcome-onboard.json in Resources */ = {isa = PBXBuildFile; fileRef = 942A4B3829A7B681002101A5 /* welcome-onboard.json */; };
+		942A4B3E29A83FA5002101A5 /* FMAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B3D29A83FA5002101A5 /* FMAlert.swift */; };
+		942A4B4129A86E4D002101A5 /* FMValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B4029A86E4D002101A5 /* FMValidator.swift */; };
+		942A4B4329A8865C002101A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 942A4B4229A8865B002101A5 /* GoogleService-Info.plist */; };
+		942A4B4629A88753002101A5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 942A4B4529A88753002101A5 /* FirebaseAuth */; };
+		942A4B4829A88753002101A5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 942A4B4729A88753002101A5 /* FirebaseFirestore */; };
+		942A4B4A29A88B32002101A5 /* FMFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B4929A88B32002101A5 /* FMFirebase.swift */; };
+		942A4B4D29A8BD5E002101A5 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B4C29A8BD5E002101A5 /* HomeVC.swift */; };
+		942A4B4F29A8C4FB002101A5 /* AppInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A4B4E29A8C4FB002101A5 /* AppInit.swift */; };
 		9437989629A3B40300B1268B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437989529A3B40300B1268B /* AppDelegate.swift */; };
 		9437989829A3B40300B1268B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437989729A3B40300B1268B /* SceneDelegate.swift */; };
 		9437989D29A3B40300B1268B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9437989B29A3B40300B1268B /* Main.storyboard */; };
@@ -31,12 +45,24 @@
 /* Begin PBXFileReference section */
 		942A4B0E29A450C4002101A5 /* OnboardingCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionVC.swift; sourceTree = "<group>"; };
 		942A4B1029A478D9002101A5 /* OnBoardingPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageModel.swift; sourceTree = "<group>"; };
-		942A4B1229A47DD1002101A5 /* onboarding-animation-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "onboarding-animation-1.json"; sourceTree = "<group>"; };
-		942A4B1329A47DD1002101A5 /* onboarding-animation-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "onboarding-animation-2.json"; sourceTree = "<group>"; };
-		942A4B1429A47DD1002101A5 /* onboarding-animation-3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "onboarding-animation-3.json"; sourceTree = "<group>"; };
 		942A4B1D29A47F51002101A5 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
-		942A4B2029A519FE002101A5 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		942A4B2029A519FE002101A5 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		942A4B2229A51FAF002101A5 /* FMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMButton.swift; sourceTree = "<group>"; };
+		942A4B2429A5CB05002101A5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		942A4B2729A5D207002101A5 /* FMAuthHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMAuthHeader.swift; sourceTree = "<group>"; };
+		942A4B2929A5E95D002101A5 /* FMImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMImageView.swift; sourceTree = "<group>"; };
+		942A4B2B29A5EEF7002101A5 /* FMUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMUILabel.swift; sourceTree = "<group>"; };
+		942A4B2D29A607FE002101A5 /* FMUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMUITextField.swift; sourceTree = "<group>"; };
+		942A4B3229A734D8002101A5 /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
+		942A4B3429A747BC002101A5 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		942A4B3629A7B5B3002101A5 /* WelcomeOnboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeOnboard.swift; sourceTree = "<group>"; };
+		942A4B3829A7B681002101A5 /* welcome-onboard.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "welcome-onboard.json"; sourceTree = "<group>"; };
+		942A4B3D29A83FA5002101A5 /* FMAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMAlert.swift; sourceTree = "<group>"; };
+		942A4B4029A86E4D002101A5 /* FMValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMValidator.swift; sourceTree = "<group>"; };
+		942A4B4229A8865B002101A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		942A4B4929A88B32002101A5 /* FMFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMFirebase.swift; sourceTree = "<group>"; };
+		942A4B4C29A8BD5E002101A5 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		942A4B4E29A8C4FB002101A5 /* AppInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInit.swift; sourceTree = "<group>"; };
 		9437989229A3B40300B1268B /* FoodMIMA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodMIMA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9437989529A3B40300B1268B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9437989729A3B40300B1268B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +83,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				943798B929A3F03400B1268B /* Lottie in Frameworks */,
+				942A4B4629A88753002101A5 /* FirebaseAuth in Frameworks */,
+				942A4B4829A88753002101A5 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,9 +102,65 @@
 		942A4B1F29A50CE3002101A5 /* AuthController */ = {
 			isa = PBXGroup;
 			children = (
-				942A4B2029A519FE002101A5 /* SignUpVC.swift */,
+				942A4B2029A519FE002101A5 /* SignupVC.swift */,
+				942A4B3229A734D8002101A5 /* SigninVC.swift */,
+				942A4B3429A747BC002101A5 /* ForgotPasswordVC.swift */,
+				942A4B3629A7B5B3002101A5 /* WelcomeOnboard.swift */,
 			);
 			path = AuthController;
+			sourceTree = "<group>";
+		};
+		942A4B2629A5D1DF002101A5 /* AuthView */ = {
+			isa = PBXGroup;
+			children = (
+				942A4B2729A5D207002101A5 /* FMAuthHeader.swift */,
+			);
+			path = AuthView;
+			sourceTree = "<group>";
+		};
+		942A4B3A29A83CB0002101A5 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				942A4B3D29A83FA5002101A5 /* FMAlert.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		942A4B3B29A83CE6002101A5 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				942A4B2229A51FAF002101A5 /* FMButton.swift */,
+				942A4B2929A5E95D002101A5 /* FMImageView.swift */,
+				942A4B2B29A5EEF7002101A5 /* FMUILabel.swift */,
+				942A4B2D29A607FE002101A5 /* FMUITextField.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		942A4B3C29A83D08002101A5 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				943798B529A3EC8B00B1268B /* FMLottieAnimatedView.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		942A4B3F29A86B43002101A5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				942A4B4029A86E4D002101A5 /* FMValidator.swift */,
+				942A4B4929A88B32002101A5 /* FMFirebase.swift */,
+				942A4B4E29A8C4FB002101A5 /* AppInit.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		942A4B4B29A8BD2B002101A5 /* MemberController */ = {
+			isa = PBXGroup;
+			children = (
+				942A4B4C29A8BD5E002101A5 /* HomeVC.swift */,
+			);
+			path = MemberController;
 			sourceTree = "<group>";
 		};
 		9437988929A3B40300B1268B = {
@@ -98,6 +182,7 @@
 		9437989429A3B40300B1268B /* FoodMIMA */ = {
 			isa = PBXGroup;
 			children = (
+				942A4B3F29A86B43002101A5 /* Classes */,
 				943798B229A3DBFB00B1268B /* Utils */,
 				943798AF29A3D22000B1268B /* Supporting */,
 				943798AE29A3D20600B1268B /* Resources */,
@@ -110,6 +195,7 @@
 				9437989B29A3B40300B1268B /* Main.storyboard */,
 				943798A029A3B40400B1268B /* LaunchScreen.storyboard */,
 				943798A329A3B40400B1268B /* Info.plist */,
+				942A4B4229A8865B002101A5 /* GoogleService-Info.plist */,
 			);
 			path = FoodMIMA;
 			sourceTree = "<group>";
@@ -125,6 +211,7 @@
 		943798AA29A3CFA200B1268B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				942A4B4B29A8BD2B002101A5 /* MemberController */,
 				942A4B1F29A50CE3002101A5 /* AuthController */,
 				943798B329A3E85600B1268B /* SplashVC.swift */,
 				942A4B0E29A450C4002101A5 /* OnboardingCollectionVC.swift */,
@@ -150,9 +237,11 @@
 		943798AD29A3D18900B1268B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				942A4B3C29A83D08002101A5 /* Animation */,
+				942A4B3B29A83CE6002101A5 /* Design */,
+				942A4B3A29A83CB0002101A5 /* Alert */,
+				942A4B2629A5D1DF002101A5 /* AuthView */,
 				942A4B1C29A47F0F002101A5 /* Cells */,
-				943798B529A3EC8B00B1268B /* FMLottieAnimatedView.swift */,
-				942A4B2229A51FAF002101A5 /* FMButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				943798BF29A4240600B1268B /* FMSizeManager.swift */,
+				942A4B2429A5CB05002101A5 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -185,9 +275,7 @@
 		943798BA29A3F04400B1268B /* LottieFiles */ = {
 			isa = PBXGroup;
 			children = (
-				942A4B1229A47DD1002101A5 /* onboarding-animation-1.json */,
-				942A4B1329A47DD1002101A5 /* onboarding-animation-2.json */,
-				942A4B1429A47DD1002101A5 /* onboarding-animation-3.json */,
+				942A4B3829A7B681002101A5 /* welcome-onboard.json */,
 				943798BC29A3F06600B1268B /* splash-loading.json */,
 			);
 			path = LottieFiles;
@@ -211,6 +299,8 @@
 			name = FoodMIMA;
 			packageProductDependencies = (
 				943798B829A3F03400B1268B /* Lottie */,
+				942A4B4529A88753002101A5 /* FirebaseAuth */,
+				942A4B4729A88753002101A5 /* FirebaseFirestore */,
 			);
 			productName = FoodMIMA;
 			productReference = 9437989229A3B40300B1268B /* FoodMIMA.app */;
@@ -242,6 +332,8 @@
 			mainGroup = 9437988929A3B40300B1268B;
 			packageReferences = (
 				943798B729A3F03400B1268B /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				942A4B2F29A6229F002101A5 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				942A4B4429A88753002101A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 9437989329A3B40300B1268B /* Products */;
 			projectDirPath = "";
@@ -257,13 +349,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				942A4B1729A47DD1002101A5 /* onboarding-animation-1.json in Resources */,
 				943798A229A3B40400B1268B /* LaunchScreen.storyboard in Resources */,
 				943798BE29A3F06600B1268B /* splash-loading.json in Resources */,
 				9437989F29A3B40400B1268B /* Assets.xcassets in Resources */,
-				942A4B1829A47DD1002101A5 /* onboarding-animation-2.json in Resources */,
-				942A4B1929A47DD1002101A5 /* onboarding-animation-3.json in Resources */,
 				9437989D29A3B40300B1268B /* Main.storyboard in Resources */,
+				942A4B3929A7B681002101A5 /* welcome-onboard.json in Resources */,
+				942A4B4329A8865C002101A5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,16 +366,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				943798B129A3DB7E00B1268B /* K.swift in Sources */,
+				942A4B2A29A5E95D002101A5 /* FMImageView.swift in Sources */,
 				943798B429A3E85600B1268B /* SplashVC.swift in Sources */,
 				943798B629A3EC8B00B1268B /* FMLottieAnimatedView.swift in Sources */,
 				942A4B2329A51FAF002101A5 /* FMButton.swift in Sources */,
 				9437989629A3B40300B1268B /* AppDelegate.swift in Sources */,
 				9437989829A3B40300B1268B /* SceneDelegate.swift in Sources */,
 				943798C029A4240600B1268B /* FMSizeManager.swift in Sources */,
+				942A4B2E29A607FF002101A5 /* FMUITextField.swift in Sources */,
+				942A4B2529A5CB05002101A5 /* Extensions.swift in Sources */,
+				942A4B3729A7B5B3002101A5 /* WelcomeOnboard.swift in Sources */,
 				942A4B0F29A450C4002101A5 /* OnboardingCollectionVC.swift in Sources */,
+				942A4B2829A5D207002101A5 /* FMAuthHeader.swift in Sources */,
+				942A4B4D29A8BD5E002101A5 /* HomeVC.swift in Sources */,
 				942A4B1129A478D9002101A5 /* OnBoardingPageModel.swift in Sources */,
-				942A4B2129A519FE002101A5 /* SignUpVC.swift in Sources */,
+				942A4B3329A734D8002101A5 /* SigninVC.swift in Sources */,
+				942A4B3529A747BC002101A5 /* ForgotPasswordVC.swift in Sources */,
+				942A4B2129A519FE002101A5 /* SignupVC.swift in Sources */,
+				942A4B2C29A5EEF7002101A5 /* FMUILabel.swift in Sources */,
 				942A4B1E29A47F51002101A5 /* OnboardingCollectionViewCell.swift in Sources */,
+				942A4B4A29A88B32002101A5 /* FMFirebase.swift in Sources */,
+				942A4B4F29A8C4FB002101A5 /* AppInit.swift in Sources */,
+				942A4B4129A86E4D002101A5 /* FMValidator.swift in Sources */,
+				942A4B3E29A83FA5002101A5 /* FMAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +610,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		942A4B2F29A6229F002101A5 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.11;
+			};
+		};
+		942A4B4429A88753002101A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		943798B729A3F03400B1268B /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
@@ -517,6 +637,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		942A4B4529A88753002101A5 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 942A4B4429A88753002101A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		942A4B4729A88753002101A5 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 942A4B4429A88753002101A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
 		943798B829A3F03400B1268B /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 943798B729A3F03400B1268B /* XCRemoteSwiftPackageReference "lottie-ios" */;

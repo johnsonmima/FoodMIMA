@@ -7,10 +7,7 @@
 
 import UIKit
 
-
 class OnboardingCollectionVC: UICollectionViewController {
-    
-    
     // Screen Data
     private let pageData:[OnBoardingPageModel] = OnBoardingPageModelData.getAllScreenData();
     
@@ -51,10 +48,8 @@ class OnboardingCollectionVC: UICollectionViewController {
     
     
     
-    
-    
+
     override func viewDidLoad() {
-        
         // setup size manager before calling view did load
         sizeManager = FMSizeManager(withFrameWidth: self.view.safeAreaLayoutGuide.layoutFrame.width, withHeightWidth: self.view.safeAreaLayoutGuide.layoutFrame.height);
         
@@ -64,9 +59,6 @@ class OnboardingCollectionVC: UICollectionViewController {
         collectionView.isPagingEnabled = true;
         // hide scroll bar
         collectionView.showsHorizontalScrollIndicator = false;
-        
-        
-        view.backgroundColor = .green
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -85,10 +77,13 @@ class OnboardingCollectionVC: UICollectionViewController {
         navigationController?.navigationBar.isHidden = true;
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         navigationController?.navigationBar.isHidden = false;
-     
+        // remove the title text
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+      
+        
     }
     
     //MARK: - Setup Buttom Controller Layout
@@ -125,7 +120,7 @@ class OnboardingCollectionVC: UICollectionViewController {
     //MARK: - Controller Action
     // navigate to signup screen
     @objc private func skipOrGetstartedButtonPressed(){
-        let signUpVC = SignUpVC()
+        let signUpVC = SignupVC()
         navigationController?.pushViewController(signUpVC, animated: true);
     }
     
